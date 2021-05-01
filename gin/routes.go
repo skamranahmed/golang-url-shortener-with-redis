@@ -8,6 +8,6 @@ import (
 func InitRouter() *gin.Engine {
 	r := gin.Default()
 	r.POST("/generate", handlers.HandleGenerateShortUrl)
-	r.GET("/:shortUrlIdentifier", handlers.HandleGetShortUrlInfo)
+	r.GET("/:urlPath/info", handlers.HandleGetShortUrlInfo)
 	return r
 }
