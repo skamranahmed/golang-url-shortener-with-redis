@@ -2,10 +2,13 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
+	"os"
 
 	"github.com/golang/glog"
 	"github.com/joho/godotenv"
+	"github.com/skamranahmed/golang-url-shortner-with-redis/gin"
 	"github.com/skamranahmed/golang-url-shortner-with-redis/models"
 )
 
@@ -32,5 +35,11 @@ func main() {
 
 	// Defer this so that if our application exits, we close the db.
 	defer db.Close()
+
+	// address on which the server will listen for requests
+	appListenAddress := fmt.Sprintf("%s:%s", os.Getenv("APP_SERVER"), os.Getenv("APP_PORT"))
+
+	router := gin.InitRouter()
+	router.Run(appListenAddress)
 
 }
