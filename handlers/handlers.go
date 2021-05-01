@@ -17,7 +17,6 @@ import (
 func HandleGenerateShortUrl(c *gin.Context) {
 	// write header
 	c.Writer.Header().Set("Content-Type", "application/json; charset=utf-8")
-	
 	var userInput models.LongUrlInput
 	err := c.ShouldBindJSON(&userInput)
 	if err != nil {
@@ -70,5 +69,11 @@ func HandleGenerateShortUrl(c *gin.Context) {
 		"response": u.String(),
 	})
 	return
+
+}
+
+// HandleGetShortUrlInfo
+func HandleGetShortUrlInfo(c *gin.Context) {
+	shortUrlIdentifier := c.Param("shortUrlIdentifier")
 
 }

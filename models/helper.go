@@ -8,8 +8,7 @@ import (
 )
 
 func SaveUrlRecord(uniqueKey, longURL string) *redis.StatusCmd {
-	h, _ := time.ParseDuration("720hours")
-	status := DB.Set(uniqueKey, longURL, time.Duration(h.Hours()))
+	status := DB.Set(uniqueKey, longURL, 5*time.Minute)
 	return status
 }
 
