@@ -72,6 +72,31 @@ func HandleGenerateShortUrl(c *gin.Context) {
 
 }
 
+// HandleRedirectToOriginalUrl
+func HandleRedirectToOriginalUrl(c *gin.Context) {
+	urlPath := c.Param("urlPath")
+	uniqueKey, err := utils.ConvertUrlPathToUniqueKey(urlPath)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"success":  false,
+			"response": "The short url that you are trying to access does not exist.",
+		})
+		return
+	}
+
+	value := models.DB.Get(fmt.Sprint(uniqueKey))
+	if value.Val() == "" {
+		c.JSON(http.StatusNotFound, gin.H{
+			"success":  false,
+			"response": "The short url that you are trying to access has either expired or it does not exist.",
+		})
+		return
+	}
+
+	c.Redirect(http.StatusMovedPermanently, value.Val())
+	return
+}
+
 // HandleGetShortUrlInfo
 func HandleGetShortUrlInfo(c *gin.Context) {
 	urlPath := c.Param("urlPath")
