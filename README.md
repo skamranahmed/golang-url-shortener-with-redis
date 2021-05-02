@@ -1,1 +1,1 @@
-# URL Shortner using Golang and Redis
+# URL Shortener using Golang and Redis
