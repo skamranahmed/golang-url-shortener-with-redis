@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/skamranahmed/golang-url-shortner-with-redis/models"
-	"github.com/skamranahmed/golang-url-shortner-with-redis/utils"
+	"github.com/skamranahmed/golang-url-shortener-with-redis/models"
+	"github.com/skamranahmed/golang-url-shortener-with-redis/utils"
 )
 
 // HandleGenerateShortUrl

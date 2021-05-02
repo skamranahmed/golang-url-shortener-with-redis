@@ -2,7 +2,7 @@ package gin
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/skamranahmed/golang-url-shortner-with-redis/handlers"
+	"github.com/skamranahmed/golang-url-shortener-with-redis/handlers"
 )
 
 func InitRouter() *gin.Engine {

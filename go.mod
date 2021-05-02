@@ -1,4 +1,4 @@
-module github.com/skamranahmed/golang-url-shortner-with-redis
+module github.com/skamranahmed/golang-url-shortener-with-redis
 
 go 1.15
 
