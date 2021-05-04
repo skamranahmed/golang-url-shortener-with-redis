@@ -35,6 +35,22 @@
 ```
 
 
+## Environment Variables
+
+- Create a .env file in the project root directory.
+
+- Copt the contents of sample.env file into the .env file
+
+`REDIS_SERVER`
+
+`REDIS_DB_PORT`
+
+`REDIS_PASSWORD` -> same as what you set in the docker command for running the redis image
+
+`APP_SERVER`
+
+`APP_PORT`
+
 ## Run Locally
 
 Clone the project
@@ -57,7 +73,7 @@ Install golang module dependencies
 
 Run the Redis instance before starting the app server
 ```docker
- docker run --name redis-db -p 6379:6379 redis redis-server --requirepass "SECRET_PASSWORD"
+ docker run --name redis-db -p 6379:6379 redis redis-server --requirepass "SUPER_SECRET_PASSWORD"
 ```
 
 Start the app server
