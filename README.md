@@ -1,4 +1,5 @@
 # URL Shortener using Golang and Redis
+![banner](https://socialify.git.ci/skamranahmed/golang-url-shortener-with-redis/image?description=1&font=Inter&language=1&owner=1&pattern=Floating%20Cogs&theme=Light)
 
 
 ## Architecture
