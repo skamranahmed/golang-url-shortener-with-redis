@@ -34,5 +34,37 @@
   GET short-url/info
 ```
 
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone github.com/skamranahmed/golang-url-shortener-with-redis
+```
+
+Go to the project directory
+
+```bash
+  cd golang-url-shortener-with-redis
+```
+
+Install golang module dependencies
+
+```bash
+  go mod download
+```
+
+Run the Redis instance before starting the app server
+```docker
+ docker run --name redis-db -p 6379:6379 redis redis-server --requirepass "SECRET_PASSWORD"
+```
+
+Start the app server
+
+```bash
+  go run main.go
+```
+
 [generate-short-url-from-long-url]: architecture/url-shortener-1.png
 [redirect-short-url-to-long-url]: architecture/url-shortener-2.png
