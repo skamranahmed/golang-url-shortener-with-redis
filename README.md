@@ -1,13 +1,15 @@
 # URL Shortener using Golang and Redis
-![banner](https://socialify.git.ci/skamranahmed/golang-url-shortener-with-redis/image?description=1&font=Inter&language=1&owner=1&pattern=Floating%20Cogs&theme=Light)
 
+![banner](https://socialify.git.ci/skamranahmed/golang-url-shortener-with-redis/image?description=1&font=Inter&language=1&owner=1&pattern=Floating%20Cogs&theme=Light)
 
 ## Architecture
 
 #### Generate a Short URL from a Long URL
+
 ![generate-short-url-from-long-url]
 
 #### Redirect a Short URL to the Original Long URL
+
 ![redirect-short-url-to-long-url]
 
 ## API Reference
@@ -18,8 +20,8 @@
   POST /generate
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
+| Parameter  | Type     | Description                                                    |
+| :--------- | :------- | :------------------------------------------------------------- |
 | `long_url` | `string` | **Required**. Long URL that you want to convert to a Short URL |
 
 #### Redirect Short URL to Original URL
@@ -34,12 +36,11 @@
   GET short-url/info
 ```
 
-
 ## Environment Variables
 
 - Create a .env file in the project root directory.
 
-- Copt the contents of sample.env file into the .env file
+- Copy the contents of sample.env file into the .env file
 
 `REDIS_SERVER`
 
@@ -72,6 +73,7 @@ Install golang module dependencies
 ```
 
 Run the Redis instance before starting the app server
+
 ```docker
  docker run --name redis-db -p 6379:6379 redis redis-server --requirepass "SUPER_SECRET_PASSWORD"
 ```
